@@ -9,7 +9,7 @@ const COLORS = {
 let board, turn, winner
 
 	/*----- cached elements  -----*/
-
+const messageEl = document.querySelector("h1")
 
 	/*----- event listeners -----*/
 
@@ -51,7 +51,7 @@ function renderBoard() {
 }
 
 function renderMessage() {
-
+    if (turn === 1) messageEl.innerText = "ORANGE'S TURN"
 }
 
 function renderControls() {
