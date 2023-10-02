@@ -2,7 +2,7 @@
 const COLORS = {
     "0": "white",
     "1": "orange",
-    "-1": "lightblue",
+    "-1": "blue",
 }
 
 	/*----- state variables -----*/
@@ -51,8 +51,10 @@ function renderBoard() {
 }
 
 function renderMessage() {
-    if (turn === 1) messageEl.innerText = "ORANGE'S TURN"
-}
+    if (winner === "T") messageEl.innerText = "It's a tie!"
+    else if (winner) messageEl.innerText = `${COLORS[winner].toUpperCase()} wins!`
+    else messageEl.innerHTML = `<span style="color: ${COLORS[turn]}">${COLORS[turn].toUpperCase()}</span>'s turn:`
+} 
 
 function renderControls() {
 
